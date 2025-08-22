@@ -21,7 +21,7 @@ with tab1:
 		password=st.text_input("enter password").strip()
 		users=SHEET.get_all_records()
 		if st.form_submit_button("login"):
-			if username=="Admin" and password=="blue":
+			if username.lower()=="Admin" and password=="blue":
 				st.success("admin's view")
 				df=pd.DataFrame(users)
 			else:
@@ -44,6 +44,7 @@ with tab2:
 			SHEET.append_row([username100,password100,name100,email100])
 
 			st.success("registeration complete")	
+
 
 
 
