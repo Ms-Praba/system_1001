@@ -31,11 +31,8 @@ with tab1:
 						found=True
 						st.success(f"welcome,{username}")
 						break
-
-
-                if not found:
-                	st.error("invalid username or password")
-
+				if not found:
+					st.error("invalid username or password")
 with tab2:				
 	with st.form("register"):
 		users=SHEET.get_all_records()
@@ -45,4 +42,5 @@ with tab2:
 		email100=st.text_input("enter your email")
 		if st.form_submit_button("register"):
 			SHEET.append_row([username100,password100,name100,email100])
+
 			st.success("registeration complete")	
