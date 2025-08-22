@@ -24,6 +24,7 @@ with tab1:
 			if username.lower()=="admin" and password=="blue":
 				st.success("admin's view")
 				df=pd.DataFrame(users)
+				st.dataframe(df)
 			else:
 				found=False
 				for user in users:
@@ -44,6 +45,7 @@ with tab2:
 			SHEET.append_row([username100,password100,name100,email100])
 
 			st.success("registeration complete")	
+
 
 
 
